@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div id="navbar" className="fixed w-full top-0 mx-auto">
-            <div className="border-b border-gray-800 bg-[#191919] flex w-full h-24 max-w-[1200px] mx-auto px-4 text-[#A7A7A7] justify-between items-center">
+            <div className="border-b border-gray-800 bg-[#191919d6] flex w-full h-24 max-w-[1200px] mx-auto px-4 text-[#A7A7A7] justify-between items-center">
                 <h1 className="text-3xl font-bold">
                     <Typed
                         className="text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD]"
@@ -52,7 +52,6 @@ const Navbar = () => {
                     {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
                 </div>
                 <ul className= {nav ? "fixed left-0 top-0 bg-[#191919] h-full w-[60%] ease-in-out duration-500 border-r border-gray-800 md:hidden" : "ease-in-out duration-500 fixed left-[-100%]"} >
-                    {/* <h1 className="text-3xl font-bold p-4">Lade</h1> */}
                     <h1 className="text-3xl font-bold p-4">
                     <Typed
                         className="text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD]"
