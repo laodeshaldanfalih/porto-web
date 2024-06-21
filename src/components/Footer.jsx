@@ -21,12 +21,6 @@ const Footer = () => {
                                 size={30}
                             />
                         </a>
-                        <a href="https://twitter.com/shaldanfalih" target="_blank" rel="noopener noreferrer">
-                            <AiFillTwitterCircle 
-                                className="hover:text-[#D9D9D9]"
-                                size={30}
-                            />
-                        </a>
                         <a href="https://www.linkedin.com/in/laodeshaldanfalih/" target="_blank" rel="noopener noreferrer">
                             <AiFillLinkedin 
                                 className="hover:text-[#D9D9D9]"
@@ -45,12 +39,6 @@ const Footer = () => {
                     <div className="hidden md:flex gap-x-3">
                         <a href="https://github.com/laodeshaldanfalih" target="_blank" rel="noopener noreferrer">
                             <AiOutlineGithub 
-                                className="hover:text-[#D9D9D9]"
-                                size={30}
-                            />
-                        </a>
-                        <a href="https://twitter.com/shaldanfalih" target="_blank" rel="noopener noreferrer">
-                            <AiFillTwitterCircle 
                                 className="hover:text-[#D9D9D9]"
                                 size={30}
                             />

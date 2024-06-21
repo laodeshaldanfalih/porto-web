@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {AiOutlineGithub, AiFillTwitterCircle, AiFillLinkedin, AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
+import {AiOutlineGithub, AiFillLinkedin, AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 import Typed from "react-typed";
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -34,12 +34,6 @@ const Navbar = () => {
                                     size={30}
                                 />
                         </a>
-                        <a href="https://twitter.com/shaldanfalih" target="_blank" rel="noopener noreferrer">
-                            <AiFillTwitterCircle 
-                                className="hover:text-[#D9D9D9]"
-                                size={30}
-                            />
-                        </a>
                         <a href="https://www.linkedin.com/in/laodeshaldanfalih/" target="_blank" rel="noopener noreferrer">
                             <AiFillLinkedin 
                                 className="hover:text-[#D9D9D9]"
@@ -68,12 +62,6 @@ const Navbar = () => {
                     <div className="flex flex-row gap-5 p-4">
                     <a href="https://github.com/laodeshaldanfalih" target="_blank" rel="noopener noreferrer">
                         <AiOutlineGithub 
-                            className="hover:text-[#D9D9D9]"
-                            size={30}
-                        />
-                    </a>
-                    <a href="https://twitter.com/shaldanfalih" target="_blank" rel="noopener noreferrer">
-                        <AiFillTwitterCircle 
                             className="hover:text-[#D9D9D9]"
                             size={30}
                         />
