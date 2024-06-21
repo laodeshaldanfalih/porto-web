@@ -1,4 +1,4 @@
-import {AiOutlineGithub, AiFillTwitterCircle, AiFillLinkedin} from "react-icons/ai"
+import {AiOutlineGithub, AiFillLinkedin} from "react-icons/ai"
 import Typed from "react-typed"
 const Footer = () => {
     return (
