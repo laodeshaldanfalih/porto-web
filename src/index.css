@@ -9,3 +9,7 @@ html {
 body {
     background-color: #191919;
 }
+
+.seventh-card {
+  grid-column: 2; /* This centers the card in the middle column */
+}
