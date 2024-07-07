@@ -17,7 +17,7 @@ const ProjectCard = ({ image, title, description, stack, liveLink, codeLink, cla
                     ) : (
                         <div className="flex flex-row items-center gap-2 text-gray-500">
                             <AiOutlineLink />
-                            <span>Live Preview</span>
+                            <span>Private</span>
                         </div>
                     )}
                     {codeLink ? (
@@ -28,7 +28,7 @@ const ProjectCard = ({ image, title, description, stack, liveLink, codeLink, cla
                     ) : (
                         <div className="flex flex-row items-center gap-2 text-gray-500">
                             <AiOutlineGithub />
-                            <span>View Code</span>
+                            <span>Private</span>
                         </div>
                     )}
                 </div>
