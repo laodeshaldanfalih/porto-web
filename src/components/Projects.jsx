@@ -31,6 +31,7 @@ const Projects = () => {
             title: "Sibunda Healthcare Mobile App",
             description: "Healthcare Application to prevent stunting for mother and child",
             stack: "Dart, Flutter, Firebase, Laravel",
+            liveLink: "https://intip.in/SibundaApp",
             codeLink: "https://github.com/laodeshaldanfalih/sibunda_frontend.git"
         },
         {
@@ -38,13 +39,15 @@ const Projects = () => {
             title: "AnakkuSehat Healthcare Mobile App",
             description: "Healthcare Application to track child's first 1000 days growth health condition",
             stack: "Dart, Flutter, SQflite",
+            liveLink: "https://intip.in/AnakkuSehat",
+            codeLink: "https://github.com/laodeshaldanfalih/anakku_sehat_app"
         },
         {
             image: Porto5,
             title: "Restoku Restaurant Mobile App",
             description: "Application for finding you the best restaurant nearby",
             stack: "Dart, Flutter, REST API",
-            liveLink: "https://github.com/laodeshaldanfalih/flutter_restaurant_app.git"
+            codeLink: "https://github.com/laodeshaldanfalih/flutter_restaurant_app.git"
         },
         {
             image: Porto6,
@@ -58,6 +61,7 @@ const Projects = () => {
             title: "Fully CI/CD Integrated Web App (Personal ToDo App)",
             description: "Healthcare Application to prevent stunting for mother and child",
             stack: "Laravel, Bootstrap, Jenkins, AWS, Terraform, SonarQube",
+            liveLink: "http://54.206.116.217",
             codeLink: "https://github.com/laodeshaldanfalih/docker-trinity-app.git",
         },
         {
