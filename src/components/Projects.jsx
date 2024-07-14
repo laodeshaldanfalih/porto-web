@@ -59,7 +59,7 @@ const Projects = () => {
         {
             image: Porto7,
             title: "Fully CI/CD Integrated Web App (Personal ToDo App)",
-            description: "Healthcare Application to prevent stunting for mother and child",
+            description: "Simple Note App to write your to-do list and keep track of your tasks easily",
             stack: "Laravel, Bootstrap, Jenkins, AWS, Terraform, SonarQube",
             liveLink: "http://54.206.116.217",
             codeLink: "https://github.com/laodeshaldanfalih/docker-trinity-app.git",
