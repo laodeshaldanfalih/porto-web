@@ -2,14 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeInOverlay {
+  animation: fadeInOverlay 0.3s ease;
+}
+
+.animate-fadeInModal {
+  animation: fadeInModal 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
-    background-color: #191919;
+    background-color: #ffffff;
+    transition: background 0.3s, color 0.3s;
 }
 
 .seventh-card {
   grid-column: 2; /* This centers the card in the middle column */
+}
+
+.toggle-dark {
+  @apply fixed top-6 right-6 z-50 bg-gradient-to-r from-[#E70FAA] to-[#00C0FD] text-white px-4 py-2 rounded-full shadow-lg cursor-pointer font-bold transition hover:scale-105;
 }
