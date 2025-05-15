@@ -53,7 +53,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr className="w-full bg-gray-800 border-0 h-px"/>
-            <p className="self-center mt-10 text-sm">@Copyright Laode Shaldan Falih 2023</p>
+            <p className="self-center mt-10 text-sm">@Copyright Laode Shaldan Falih 2025</p>
         </div>  
     )
 }

@@ -1,16 +1,29 @@
+import { useState } from "react";
 import Porto1 from "../assets/web_crustea.png";
 import Porto2 from "../assets/web_ranmits.png";
 import Porto3 from "../assets/mobile_sibunda.png";
-import Porto4 from "../assets/mobile_anakku_sehat.png";
-import Porto5 from "../assets/mobile_restoku.png";
-import Porto6 from "../assets/mobile_rememberme.png";
 import Porto7 from "../assets/mobile_trinityapp.png";
 import Porto8 from "../assets/iot_crustea.jpg"
 import Porto9 from "../assets/iot_robotic.png"
+import Porto10 from "../assets/web_reemotely.png"
+import Porto11 from "../assets/web_alnico.png"
 import ProjectCard from "./ProjectCard";
 
-const Projects = () => {
+const Projects = ({ onModalOpen }) => {
+    const [openIndex, setOpenIndex] = useState(null);
     const portos = [
+        {
+            image: Porto11,
+            title: "Alnico Agency Partner",
+            description: "A tailored custom ERP solution integrated into the Lark ecosystem, designed to effectively manage agency partnerships for Alnico Company. Features include KPI dashboards, client management, department administration, and real-time analytics, all seamlessly connected with Lark's communication and automation tools.",
+            stack: "Next.js, React MUI, Lark server API, Custom ERP, Real-time Analytics, Lark Integration"
+        },
+        {
+            image: Porto10,
+            title: "Reemotely Portal",
+            description: "A comprehensive platform designed to facilitate the generation of marketing content, leveraging advanced AI technology to enhance efficiency and creativity.",
+            stack: "Next.js, React MUI, OpenAI API"
+        },
         {
             image: Porto1,
             title: "Crustea Company Website",
@@ -35,28 +48,6 @@ const Projects = () => {
             codeLink: "https://github.com/laodeshaldanfalih/sibunda_frontend.git"
         },
         {
-            image: Porto4,
-            title: "AnakkuSehat Healthcare Mobile App",
-            description: "Healthcare Application to track child's first 1000 days growth health condition",
-            stack: "Dart, Flutter, SQflite",
-            liveLink: "https://intip.in/AnakkuSehat",
-            codeLink: "https://github.com/laodeshaldanfalih/anakku_sehat_app"
-        },
-        {
-            image: Porto5,
-            title: "Restoku Restaurant Mobile App",
-            description: "Application for finding you the best restaurant nearby",
-            stack: "Dart, Flutter, REST API",
-            codeLink: "https://github.com/laodeshaldanfalih/flutter_restaurant_app.git"
-        },
-        {
-            image: Porto6,
-            title: "RememberMe Social Mobile App",
-            description: "Healthcare Application to prevent stunting for mother and child",
-            stack: "Kotlin, SQL",
-            codeLink: "https://github.com/laodeshaldanfalih/RememberMe.git"
-        },
-        {
             image: Porto7,
             title: "Fully CI/CD Integrated Web App (Personal ToDo App)",
             description: "Simple Note App to write your to-do list and keep track of your tasks easily",
@@ -78,27 +69,39 @@ const Projects = () => {
         },
     ];
 
+    // Notify parent (App) if a modal is open or closed
+    const handleOpen = (idx) => {
+        setOpenIndex(idx);
+        if (onModalOpen) onModalOpen(true);
+    };
+    const handleClose = () => {
+        setOpenIndex(null);
+        if (onModalOpen) onModalOpen(false);
+    };
+
     return (
-        <div id="projects" className="w-full max-w-[1200px] pb-40 pt-12 lg:pb-60 px-4 flex flex-col justify-center items-center mx-auto">
-            <h1 className="text-[#CCCCCC] text-3xl font-bold my-5 md:text-4xl lg:text-5xl">Projects</h1>
-            <p className="text-[#A7A7A7] md:text-xl lg:text-2xl">Things I’ve built so far</p>
-            <div className="grid mt-10 md:grid-cols-2 lg:grid-cols-3 gap-y-32 gap-x-2 w-full justify-center justify-items-center">
-                {portos.map((porto, index) => {
-                    return (
-                        <ProjectCard
-                            key={index} // Ensure to add a unique key
-                            // className={}
-                            image={porto.image}
-                            title={porto.title}
-                            description={porto.description}
-                            stack={porto.stack}
-                            liveLink={porto.liveLink}
-                            codeLink={porto.codeLink}
-                        />
-                    );
-                })}
+        <section id="projects" className="relative w-full max-w-[1200px] px-4 py-24 flex flex-col justify-center items-center mx-auto">
+            {/* Subtle background effect */}
+            <div className="absolute inset-0 pointer-events-none select-none opacity-30 z-0 bg-gradient-to-br from-[#E70FAA]/30 via-[#232526]/60 to-[#00C0FD]/30 blur-2xl" />
+            <h1 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD] mb-4 text-center drop-shadow-lg">Projects</h1>
+            <p className="relative z-10 text-[#A7A7A7] md:text-xl lg:text-2xl mb-12 text-center max-w-2xl">A showcase of my work, blending creativity and technology to solve real-world problems.</p>
+            <div className="relative z-10 grid gap-12 md:grid-cols-2 lg:grid-cols-3 w-full justify-center justify-items-center">
+                {portos.map((porto, index) => (
+                    <ProjectCard
+                        key={index}
+                        image={porto.image}
+                        title={porto.title}
+                        description={porto.description}
+                        stack={porto.stack}
+                        liveLink={porto.liveLink}
+                        codeLink={porto.codeLink}
+                        open={openIndex === index}
+                        onOpen={() => handleOpen(index)}
+                        onClose={handleClose}
+                    />
+                ))}
             </div>
-        </div>
+        </section>
     );
 };
 
