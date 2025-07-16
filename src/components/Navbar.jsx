@@ -12,8 +12,7 @@ const Navbar = ({ hidden }) => {
             const isScrolled = window.scrollY > 50;
             setScrolled(isScrolled);
 
-            // Update active section based on scroll position
-            const sections = ['about', 'stack', 'projects', 'contact'];
+            const sections = ['about', 'stack', 'skills', 'projects', 'blog', 'contact'];
             const currentSection = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -38,63 +37,65 @@ const Navbar = ({ hidden }) => {
     const navLinks = [
         { id: 'about', label: 'About' },
         { id: 'stack', label: 'Tech Stack' },
+        { id: 'skills', label: 'Skills' },
         { id: 'projects', label: 'Projects' },
         { id: 'contact', label: 'Contact' }
     ];
 
     return (
-        <div id="navbar" className="fixed w-full top-0 z-40">
-            <div className={`transition-all duration-300 ${
-                scrolled 
-                    ? 'bg-white shadow-lg' 
-                    : 'bg-white'
-            } backdrop-blur-md flex w-full h-20 max-w-[1200px] mx-auto px-4 text-gray-800 justify-between items-center border-b border-gray-200`}>
-                <h1 className="text-3xl font-bold">
-                    <Typed
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD]"
-                        strings={["Laode", "Shaldan", "Falih"]}
-                        typeSpeed={50}
-                        backSpeed={50}
-                        loop
-                    />
-                </h1>
+        <div id="navbar" className="fixed w-full top-0 z-50">
+            <div className="bg-[#0d1117] border-b border-[#30363d] shadow-lg backdrop-blur-md flex w-full h-20 max-w-[1200px] mx-auto px-4 text-[#c9d1d9] justify-between items-center">
+                {/* Logo */}
+                <div className="flex items-center gap-2">
+                    <span className="text-[#58a6ff] font-mono">$</span>
+                    <h1 className="text-xl font-bold font-mono">
+                        <Typed
+                            className="text-[#f85149]"
+                            strings={["Laode", "Shaldan", "Falih"]}
+                            typeSpeed={50}
+                            backSpeed={50}
+                            loop
+                        />
+                    </h1>
+                </div>
+                
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex flex-row gap-20 items-center">
-                    <ul className="flex flex-row text-lg md:gap-10 lg:gap-16">
+                <div className="hidden md:flex flex-row gap-8 items-center">
+                    <ul className="flex flex-row text-sm gap-6">
                         {navLinks.map(({ id, label }) => (
                             <li key={id} className="relative group">
                                 <a 
                                     href={`#${id}`}
-                                    className={`font-medium transition-colors duration-300 ${
+                                    className={`transition-colors duration-300 hover:text-[#58a6ff] font-medium ${
                                         activeSection === id 
-                                            ? 'text-gray-900' 
-                                            : 'text-gray-600 hover:text-gray-900'
+                                            ? 'text-[#58a6ff]' 
+                                            : 'text-[#c9d1d9]'
                                     }`}
                                 >
                                     {label}
                                 </a>
-                                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#E70FAA] to-[#00C0FD] transition-all duration-300 group-hover:w-full ${
+                                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#58a6ff] transition-all duration-300 group-hover:w-full ${
                                     activeSection === id ? 'w-full' : ''
                                 }`} />
                             </li>
                         ))}
                     </ul>
-                    <div className="flex flex-row gap-4">
+                    <div className="flex flex-row gap-3">
                         <a 
                             href="https://github.com/laodeshaldanfalih" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-300"
+                            className="p-2 rounded-md hover:bg-[#21262d] transition-colors duration-300 border border-transparent hover:border-[#30363d]"
                         >
-                            <AiOutlineGithub size={24} className="text-gray-600 hover:text-gray-900 transition-colors duration-300" />
+                            <AiOutlineGithub size={20} className="text-[#c9d1d9] hover:text-[#58a6ff] transition-colors duration-300" />
                         </a>
                         <a 
                             href="https://www.linkedin.com/in/laodeshaldanfalih/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-300"
+                            className="p-2 rounded-md hover:bg-[#21262d] transition-colors duration-300 border border-transparent hover:border-[#30363d]"
                         >
-                            <AiFillLinkedin size={24} className="text-gray-600 hover:text-gray-900 transition-colors duration-300" />
+                            <AiFillLinkedin size={20} className="text-[#c9d1d9] hover:text-[#58a6ff] transition-colors duration-300" />
                         </a>
                     </div>
                 </div>
@@ -102,43 +103,34 @@ const Navbar = ({ hidden }) => {
                 {/* Mobile Menu Button */}
                 <button 
                     onClick={handleSideNav} 
-                    className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                    className="md:hidden p-2 rounded-md hover:bg-[#21262d] transition-colors duration-300 bg-[#21262d] border border-[#30363d]"
                 >
-                    {nav ? <AiOutlineClose size={24} className="text-gray-600" /> : <AiOutlineMenu size={24} className="text-gray-600" />}
+                    {nav ? <AiOutlineClose size={24} className="text-[#c9d1d9]" /> : <AiOutlineMenu size={24} className="text-[#c9d1d9]" />}
                 </button>
 
                 {/* Mobile Navigation */}
-                <div className={`fixed top-0 right-0 h-full w-[70%] max-w-sm bg-white transform transition-transform duration-300 ease-in-out shadow-xl md:hidden ${
+                <div className={`fixed top-0 right-0 h-full w-[75%] max-w-sm bg-[#0d1117] border-l border-[#30363d] transform transition-transform duration-300 ease-in-out md:hidden shadow-2xl ${
                     nav ? 'translate-x-0' : 'translate-x-full'
                 }`}>
-                    <div className="p-6">
-                        <div className="flex justify-between items-center mb-8">
-                            <h1 className="text-2xl font-bold">
-                                <Typed
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD]"
-                                    strings={["Laode", "Shaldan", "Falih"]}
-                                    typeSpeed={50}
-                                    backSpeed={50}
-                                    loop
-                                />
-                            </h1>
+                    <div className="p-6 bg-[#0d1117] h-screen">
+                        <div className="flex justify-end items-center mb-8">
                             <button 
                                 onClick={handleSideNav}
-                                className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                                className="p-2 rounded-md hover:bg-[#21262d] transition-colors duration-300"
                             >
-                                <AiOutlineClose size={24} className="text-gray-600" />
+                                <AiOutlineClose size={24} className="text-[#c9d1d9]" />
                             </button>
                         </div>
-                        <ul className="space-y-4">
+                        <ul className="space-y-3">
                             {navLinks.map(({ id, label }) => (
                                 <li key={id}>
                                     <a 
                                         href={`#${id}`}
                                         onClick={handleSideNav}
-                                        className={`block py-2 px-4 rounded-lg transition-colors duration-300 ${
+                                        className={`block py-3 px-4 rounded-md transition-colors duration-300 text-sm font-medium ${
                                             activeSection === id 
-                                                ? 'bg-gray-100 text-gray-900' 
-                                                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                                ? 'bg-[#21262d] text-[#58a6ff] border border-[#30363d]' 
+                                                : 'text-[#c9d1d9] hover:bg-[#21262d] hover:text-[#58a6ff]'
                                         }`}
                                     >
                                         {label}
@@ -146,22 +138,22 @@ const Navbar = ({ hidden }) => {
                                 </li>
                             ))}
                         </ul>
-                        <div className="flex gap-4 mt-8">
+                        <div className="flex gap-3 mt-8">
                             <a 
                                 href="https://github.com/laodeshaldanfalih" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full hover:bg-gray-100 transition-colors duration-300"
+                                className="p-3 rounded-md hover:bg-[#21262d] transition-colors duration-300 border border-[#30363d] flex-1 flex justify-center"
                             >
-                                <AiOutlineGithub size={24} className="text-gray-600 hover:text-gray-900 transition-colors duration-300" />
+                                <AiOutlineGithub size={20} className="text-[#c9d1d9] hover:text-[#58a6ff] transition-colors duration-300" />
                             </a>
                             <a 
                                 href="https://www.linkedin.com/in/laodeshaldanfalih/" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full hover:bg-gray-100 transition-colors duration-300"
+                                className="p-3 rounded-md hover:bg-[#21262d] transition-colors duration-300 border border-[#30363d] flex-1 flex justify-center"
                             >
-                                <AiFillLinkedin size={24} className="text-gray-600 hover:text-gray-900 transition-colors duration-300" />
+                                <AiFillLinkedin size={20} className="text-[#c9d1d9] hover:text-[#58a6ff] transition-colors duration-300" />
                             </a>
                         </div>
                     </div>

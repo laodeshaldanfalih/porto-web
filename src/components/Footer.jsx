@@ -5,15 +5,18 @@ const Footer = () => {
         <div className="w-full max-w-[1200px] text-[#A7A7A7] px-4 pb-10 flex flex-col gap-5 mx-auto justify-between">
             <div className="flex flex-col md:flex-row justify-between">
                 <div className="flex flex-row justify-between items-center">
-                    <h1 className="text-3xl font-bold">
+                    <div className="flex items-center gap-2">
+                    <span className="text-[#58a6ff] font-mono">$</span>
+                    <h1 className="text-xl font-bold font-mono">
                         <Typed
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-[#E70FAA] to-[#00C0FD]"
+                            className="text-[#f85149]"
                             strings={["Laode", "Shaldan", "Falih"]}
                             typeSpeed={50}
                             backSpeed={50}
                             loop
                         />
                     </h1>
+                </div>
                     <div className="flex flex-row py-4 gap-x-10 md:gap-x-3 md:hidden">
                         <a href="https://github.com/laodeshaldanfalih" target="_blank" rel="noopener noreferrer">
                             <AiOutlineGithub 
