@@ -93,10 +93,9 @@ const Projects = ({ onModalOpen }) => {
             title: "Fully CI/CD Integrated Web App",
             description: "Simple Note App to write your to-do list and keep track of your tasks easily",
             stack: "Laravel, Bootstrap, Jenkins, AWS, Terraform, SonarQube",
-            liveLink: "http://54.206.116.217",
             codeLink: "https://github.com/laodeshaldanfalih/docker-trinity-app.git",
             category: "web",
-            status: "live",
+            status: "production",
             year: "2023"
         },
         {
