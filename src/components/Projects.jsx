@@ -27,16 +27,16 @@ const Projects = ({ onModalOpen }) => {
             liveLink: "https://memovault.site",
             year: "2025"
         },
-        {
-            image: Porto01,
-            title: "Hear Speech Care",
-            description: "Comprehensive healthcare clinic website providing ENT specialist services, speech therapy, occupational therapy, and behavioral therapy. Features online consultation booking, pharmacy services, and home visit scheduling for patients in Surabaya, East Java. Has 64 active visitors (+100% growth), 105 page views (+242% growth), and 70% bounce rate.",
-            stack: "NextJS, Tailwind CSS, Healthcare Management System",
-            category: "web",
-            status: "production",
-            liveLink: "https://www.hearspeechcare.com/",
-            year: "2025"
-    },
+        // {
+        //     image: Porto01,
+        //     title: "Hear Speech Care",
+        //     description: "Comprehensive healthcare clinic website providing ENT specialist services, speech therapy, occupational therapy, and behavioral therapy. Features online consultation booking, pharmacy services, and home visit scheduling for patients in Surabaya, East Java. Has 64 active visitors (+100% growth), 105 page views (+242% growth), and 70% bounce rate.",
+        //     stack: "NextJS, Tailwind CSS, Healthcare Management System",
+        //     category: "web",
+        //     status: "production",
+        //     liveLink: "https://www.hearspeechcare.com/",
+        //     year: "2025"
+        // },
         {
             image: Porto11,
             title: "Alnico Agency Partner",
